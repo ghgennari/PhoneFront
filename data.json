@@ -1,17 +1,6 @@
 {
   "contacts": [
     {
-      "id": 2,
-      "name": "Gustavo",
-      "number": "159859953",
-      "email": "ghgennari",
-      "address": "rua dos andradas",
-      "category": "Friends",
-      "favorite": true,
-      "notes": "teste",
-      "photoUrl": "foto"
-    },
-    {
       "id": 6,
       "name": "familia",
       "number": "familia",

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
+import { Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-contacts',
@@ -23,14 +24,15 @@ export class ContactsComponent implements OnInit {
   constructor(private service: ContactService, private formBuilder: FormBuilder){
     this.formGroupContact = formBuilder.group({
       id: [''],
-      name: [''],
-      number: [''],
+      name: ['', Validators.required],
+      telephone: ['', Validators.required],
       email: [''],
       address: [''],
       category: [''],
       favorite: [false],
       notes: [''],
-      photoUrl: ['']
+      photoUrl: [''],
+      birthdate: ['']
     });
   }
 
@@ -54,11 +56,16 @@ export class ContactsComponent implements OnInit {
   }
 
   save() {
+  if (this.formGroupContact.invalid){
+    alert("Preencha os campos obrigatórios!");
+    return;
+  }  
+
   this.service.save(this.formGroupContact.value).subscribe({
     next: json => {
-      this.formGroupContact.reset(); // limpa o formulário
       this.showMessage = 'Contato salvo com sucesso!';
-      setTimeout(() => this.showMessage = '', 3000); // some após 3 segundos
+      this.formGroupContact.reset();
+      setTimeout(() => this.showMessage = '', 3000); 
     }
   });
 }
@@ -87,7 +94,7 @@ export class ContactsComponent implements OnInit {
     this.filteredContacts = this.contacts.filter(contact => {
       const matchesText = contact.name.toLowerCase().includes(term) ||
       contact.email.toLowerCase().includes(term) ||
-      contact.number.includes(term);
+      contact.telephone.includes(term);
       const matchesCategory = this.selectedCategory === '' || contact.category === this.selectedCategory;
       return matchesText && matchesCategory;
     });

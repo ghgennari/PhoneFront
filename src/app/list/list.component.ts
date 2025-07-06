@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
     const matchesSearch =
       contact.name.toLowerCase().includes(term) ||
       contact.email.toLowerCase().includes(term) ||
-      contact.number.includes(term);
+      contact.telephone.includes(term);
 
     const matchesFilter =
       this.selectedFilter === 'todos' ? true :

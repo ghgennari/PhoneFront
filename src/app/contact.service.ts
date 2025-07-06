@@ -7,7 +7,7 @@ import { Contact } from './contact';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:3000/contacts';
+  private apiUrl = 'http://localhost:8080/contacts';
 
   constructor(private http: HttpClient) {}
 
@@ -19,9 +19,6 @@ export class ContactService {
     return this.http.post<Contact>(this.apiUrl, contact);
   }
 
-  /*delete(contact: Contact): Observable<void>{
-    return this.http.delete<void>(`${this.apiUrl}/${contact.id}`)
-  }*/
 
   update(contact: Contact): Observable<Contact>{
     return this.http.put<Contact>(`${this.apiUrl}/${contact.id}`,contact);

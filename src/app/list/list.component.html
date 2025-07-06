@@ -1,4 +1,4 @@
-<div class="container-fluid mb-auto " >
+<div class="container-fluid col-7 m-auto " >
 <div class="filters">
   <input
     type="text"
@@ -19,11 +19,11 @@
 <ul>
   <li *ngFor="let contact of filteredContacts">
     <div class="contact-info">
-      <strong>{{ contact.name }}</strong> - {{ contact.number }} - {{ contact.email }}
+      <strong>{{ contact.name }}</strong> - {{ contact.telephone }} - {{ contact.email }}
       <span *ngIf="contact.favorite">★</span>
     </div>
     <div class="actions">
-      <button class="btn btn-primary rounded-pill px3" (click)="editContact(contact)">Editar</button>
+      <button class="btn btn-primary rounded-pill px3" (click)="editContact(contact)">Ver/Editar</button>
       <button class="btn btn-danger rounded-pill px-3" (click)="deleteContact(contact)">Excluir</button>
     </div>
   </li>
