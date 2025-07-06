@@ -26,13 +26,13 @@ export class ContactsComponent implements OnInit {
       id: [''],
       name: ['', Validators.required],
       telephone: ['', Validators.required],
+      birthDate: [''],
       email: [''],
       address: [''],
       category: [''],
       favorite: [false],
       notes: [''],
-      photoUrl: [''],
-      birthdate: ['']
+      photoUrl: ['']
     });
   }
 

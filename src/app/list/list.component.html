@@ -19,7 +19,7 @@
 <ul>
   <li *ngFor="let contact of filteredContacts">
     <div class="contact-info">
-      <strong>{{ contact.name }}</strong> - {{ contact.telephone }} - {{ contact.email }}
+      <strong>{{ contact.name }}</strong> - {{ contact.telephone }}
       <span *ngIf="contact.favorite">★</span>
     </div>
     <div class="actions">

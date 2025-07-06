@@ -3,19 +3,25 @@
   {{ showMessage }}
 </div>
 <form [formGroup]="formGroupContact" (ngSubmit)="isEditing ? update() : save()">
+
   <input formControlName="name" placeholder="Nome*" class="form-control mb-2">
   <input formControlName="telephone" placeholder="Telefone*" class="form-control mb-2">
   <input formControlName="email" placeholder="Email" class="form-control mb-2">
   <input formControlName="address" placeholder="Endereço" class="form-control mb-2">
-  <input formControlName="birthdate" type="date" placeholder="Data Nasc." class="form-control mb-2" />
+  <input formControlName="birthDate" placeholder="Data Nasc." class="form-control mb-2">
+
   <select formControlName="category" class="form-control mb-2" placeholder="Categoria">
+    <option value="" disabled hidden>Categoria</option>
     <option value="Family">Família</option>
     <option value="Friends">Amigos</option>
     <option value="Work">Trabalho</option>
     <option value="Others">Outros</option>
   </select>
+
   <textarea formControlName="notes" placeholder="Observações" class="form-control mb-2"></textarea>
-  <input formControlName="photoUrl" placeholder="URL da foto" class="form-control mb-2">
+
+  <!--<input formControlName="photoUrl" placeholder="URL da foto" class="form-control mb-2">-->
+  
   <div class="form-check mb-2">
     <input type="checkbox" class="form-check-input" formControlName="favorite">
     <label class="form-check-label">Favorito</label>
