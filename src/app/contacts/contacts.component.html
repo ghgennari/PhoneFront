@@ -1,0 +1,28 @@
+<div class="container-fluid col-7 m-auto">
+<div *ngIf="showMessage" class="alert alert-success">
+  {{ showMessage }}
+</div>
+<form [formGroup]="formGroupContact" (ngSubmit)="isEditing ? update() : save()">
+  <input formControlName="name" placeholder="Nome" class="form-control mb-2">
+  <input formControlName="number" placeholder="Telefone" class="form-control mb-2">
+  <input formControlName="email" placeholder="Email" class="form-control mb-2">
+  <input formControlName="address" placeholder="Endereço" class="form-control mb-2">
+  <select formControlName="category" class="form-control mb-2" placeholder="Categoria">
+    <option value="Family">Família</option>
+    <option value="Friends">Amigos</option>
+    <option value="Work">Trabalho</option>
+    <option value="Others">Outros</option>
+  </select>
+  <textarea formControlName="notes" placeholder="Observações" class="form-control mb-2"></textarea>
+  <input formControlName="photoUrl" placeholder="URL da foto" class="form-control mb-2">
+  <div class="form-check mb-2">
+    <input type="checkbox" class="form-check-input" formControlName="favorite">
+    <label class="form-check-label">Favorito</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">{{ isEditing ? 'Atualizar' : 'Salvar' }}</button>
+  <button type="button" class="btn btn-secondary ms-2" (click)="clear()">Limpar</button>
+</form>
+</div>
+
+

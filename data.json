@@ -1,0 +1,59 @@
+{
+  "contacts": [
+    {
+      "id": 2,
+      "name": "Gustavo",
+      "number": "159859953",
+      "email": "ghgennari",
+      "address": "rua dos andradas",
+      "category": "Friends",
+      "favorite": true,
+      "notes": "teste",
+      "photoUrl": "foto"
+    },
+    {
+      "id": 6,
+      "name": "familia",
+      "number": "familia",
+      "email": "familia",
+      "address": "familia",
+      "category": "Family",
+      "favorite": false,
+      "notes": "familia",
+      "photoUrl": ""
+    },
+    {
+      "id": 7,
+      "name": "amigos",
+      "number": "amigos",
+      "email": "amigos",
+      "address": "amigos",
+      "category": "Friends",
+      "favorite": null,
+      "notes": null,
+      "photoUrl": null
+    },
+    {
+      "id": 8,
+      "name": "trabalho",
+      "number": "trabalho",
+      "email": "trabalho",
+      "address": null,
+      "category": "Work",
+      "favorite": null,
+      "notes": null,
+      "photoUrl": null
+    },
+    {
+      "id": 9,
+      "name": "outros",
+      "number": "trouso",
+      "email": "outros",
+      "address": null,
+      "category": "Others",
+      "favorite": null,
+      "notes": null,
+      "photoUrl": null
+    }
+  ]
+}
