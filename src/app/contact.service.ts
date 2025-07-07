@@ -7,7 +7,7 @@ import { Contact } from './contact';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:8080/contacts';
+  private apiUrl = 'http://ghgennari.duckdns.org/contacts';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,6 @@ export class ContactService {
   save(contact: Contact): Observable<Contact>{
     return this.http.post<Contact>(this.apiUrl, contact);
   }
-
 
   update(contact: Contact): Observable<Contact>{
     return this.http.put<Contact>(`${this.apiUrl}/${contact.id}`,contact);

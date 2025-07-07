@@ -7,7 +7,7 @@ import { Contact } from './contact';
   providedIn: 'root'
 })
 export class ListService {
-  private apiUrl = 'http://localhost:8080/contacts';
+  private apiUrl = 'http://ghgennari.duckdns.org/contacts';
 
   constructor(private http: HttpClient) {}
 
