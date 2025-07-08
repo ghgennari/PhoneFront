@@ -1,22 +1,22 @@
 <div class="container-fluid col-7 m-auto " >
-<div class="filters">
-  <input
+  <div class="filters">
+    <input
     type="text"
     [(ngModel)]="searchTerm"
     (input)="filterContacts()"
     placeholder="Buscar contatos..." />
-  
-  <select [(ngModel)]="selectedFilter" (change)="filterContacts()">
-    <option value="todos">Todos</option>
-    <option value="favoritos">Favoritos</option>
-    <option value="family">Família</option>
-    <option value="friends">Amigos</option>
-    <option value="work">Trabalho</option>
-    <option value="others">Outros</option>
-  </select>
-</div>
+    
+    <select [(ngModel)]="selectedFilter" (change)="filterContacts()">
+      <option value="todos">Todos</option>
+      <option value="favoritos">Favoritos</option>
+      <option value="family">Família</option>
+      <option value="friends">Amigos</option>
+      <option value="work">Trabalho</option>
+      <option value="others">Outros</option>
+    </select>
+  </div>
 
-<ul>
+  <ul>
   <li *ngFor="let contact of filteredContacts">
     <div class="contact-info">
       <strong>{{ contact.name }}</strong> - {{ contact.telephone }}

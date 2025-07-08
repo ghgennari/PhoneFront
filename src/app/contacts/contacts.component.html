@@ -2,9 +2,8 @@
 <div *ngIf="showMessage" class="alert alert-success">
   {{ showMessage }}
 </div>
-<h1>Cadastre um Contato!</h1>
-<form [formGroup]="formGroupContact" (ngSubmit)="isEditing ? update() : save()">
-
+<form class="bg-secondary text-white" [formGroup]="formGroupContact" (ngSubmit)="isEditing ? update() : save()">
+  <h1 adjust-text="center">Cadastre um Contato!</h1>
   <input formControlName="name" placeholder="Nome*" class="form-control mb-2">
   <input formControlName="telephone" placeholder="Telefone*" class="form-control mb-2">
   <input formControlName="email" placeholder="Email" class="form-control mb-2">
